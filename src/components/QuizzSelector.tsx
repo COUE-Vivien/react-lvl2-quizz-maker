@@ -40,7 +40,7 @@ const QuizzSelector: React.FC = () => {
       .then(options => setCategoryOptions(options))
       .catch((error: Error) => {
         // If an error occurs, set the error message and show the error modal
-        setErrorMsg(error.message || 'Une erreur inattendue est survenue');
+        setErrorMsg(error.message || 'An unexpected error occurred while fetching categories.');
         setShowModal(true);
       });
   }, []);
@@ -72,7 +72,7 @@ const QuizzSelector: React.FC = () => {
         .catch((err: Error) => {
           console.debug('Error fetching questions:', err);
           setQuestions([]);
-          setErrorMsg(err.message || 'Une erreur inattendue est survenue');
+          setErrorMsg(err.message || 'An unexpected error occurred while fetching questions.');
           setShowModal(true);
         })
         .finally(() => {

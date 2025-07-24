@@ -11,7 +11,7 @@ export async function fetchQuestions(category: string, difficulty: string): Prom
     const data = await res.json();
     return data && data.results ? data.results : [];
   } catch (error) {
-    console.debug('Erreur lors de la récupération des questions:', error);
-    throw new Error('Impossible de récupérer les questions.');
+    console.debug('Error when fetching questions:', error);
+    throw new Error('Failed to fetch the questions.');
   }
 }

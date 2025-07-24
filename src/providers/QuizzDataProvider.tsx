@@ -16,8 +16,8 @@ export const QuizzDataProvider = ({ children }: { children: ReactNode }) => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Map<number, string>>(new Map());
   
-  // Memoize shuffled answers for each question
-  const shuffledAnswersList = useMemo(() => {
+  // Memorize shuffled answers for each question
+  const shuffledAnswersList: string[][] = useMemo(() => {
     return questions.map(q => shuffleArray([q.correct_answer, ...q.incorrect_answers]));
   }, [questions]);
 

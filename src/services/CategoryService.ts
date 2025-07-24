@@ -8,7 +8,7 @@ export async function fetchCategoryOptions(): Promise<CategoryOption[]> {
     const data: { trivia_categories: CategoryOption[] } = await response.json();
     return data.trivia_categories;
   } catch (error) {
-    console.debug('Erreur lors de la récupération des catégories:', error);
-    throw new Error('Impossible de récupérer les catégories.');
+    console.debug('Error when fetching categories:', error);
+    throw new Error('Failed to fetch categories.');
   }
 }
